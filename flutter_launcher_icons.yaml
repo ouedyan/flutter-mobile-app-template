@@ -1,0 +1,11 @@
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  # TODO: Change this to the correct path
+  image_path: "assets/icons/launcher_icon.png"
+  # Icons with alpha channel are not allowed in the Apple App Store.
+  remove_alpha_ios: true
+
+# See https://pub.dev/packages/flutter_launcher_icons#mag-attributes for more information.
+
+
