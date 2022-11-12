@@ -1,67 +1,57 @@
-import 'package:bloc/bloc.dart';
+import 'dart:async';
 import 'package:bot_toast/bot_toast.dart';
-import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_mobile_template/core/theme/colors.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_mobile_template/core/init/routes/routes.dart';
+import 'package:flutter_mobile_template/core/init/theme/colors.dart';
+import 'package:flutter_mobile_template/view/home/home_view.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
+import 'core/base/bloc/app_bloc_observer.dart';
+import 'core/dependency_injection.dart';
 
-import 'core/bloc/app_bloc_observer.dart';
-import 'core/constants.dart';
-import 'core/navigation.gr.dart';
-
-Future main() async {
-  final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  initializeDateFormatting('tr');
   await EasyLocalization.ensureInitialized();
-  await ScreenUtil.ensureScreenSize();
-  BlocOverrides.runZoned(
-    () {
-      // TODO: Dependency Injection
-      runApp(
-        EasyLocalization(
-          supportedLocales: supportedLocales,
-          path: translationsPath,
-          fallbackLocale: en,
-          useOnlyLangCode: true,
-          child: MyApp(),
+
+  runZoned(
+    () => runApp(
+      MultiRepositoryProvider(
+        providers: DependencyInjector.instance.repositoryProviders,
+        child: MultiBlocProvider(
+          providers: DependencyInjector.instance.globalBlocProviders,
+          child: const MyApp(),
         ),
-      );
-    },
-    blocObserver: AppBlocObserver(),
+      ),
+    ),
   );
+  Bloc.observer = AppBlocObserver();
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
-
-  final _appRouter = AppRouter();
-
-  final botToastBuilder = BotToastInit();
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'Flutter Mobile App Template',
-      debugShowCheckedModeBanner: false,
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
-      routerDelegate: _appRouter.delegate(
-        navigatorObservers: () => [BotToastNavigatorObserver()],
-      ),
-      routeInformationParser: _appRouter.defaultRouteParser(),
-      theme: ThemeData(
-        primarySwatch: primarySwatch,
-      ),
-      builder: (context, child) {
-        ScreenUtil.init(
-          context,
-          // designSize: const Size(360, 690),
-          // minTextAdapt: true,
-          // splitScreenMode: true,
+    initializeDateFormatting('tr');
+    return Sizer(
+      builder: (context, orientation, deviceType) {
+        final botToastBuilder = BotToastInit();
+        return MaterialApp.router(
+          routerConfig: routes,
+          builder: (context, child) => botToastBuilder(
+            context,
+            const HomeView(),
+          ),
+          title: 'Flutter Mobile App Template',
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            primarySwatch: primarySwatch,
+          ),
         );
-        return botToastBuilder.call(context, child);
       },
     );
   }
