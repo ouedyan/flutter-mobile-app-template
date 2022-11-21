@@ -1,4 +1,4 @@
-# Flutter Mobile App Project Template (flutter_bloc, autoroute, dio, json_serializable, easy_localization bot_toast, flutter_secure_storage(and helpers), flutter_screenutil, flutter_native_splash, flutter_launcher_icons and other generally used features and tools in production.)
+# Flutter Mobile App Project Template (flutter_bloc, go_router, vexana, json_serializable, easy_localization bot_toast, flutter_secure_storage(and helpers), sizer, google_fonts, flutter_native_splash, flutter_launcher_icons and other generally used features and tools in production.)
 
 This is a battery included [Flutter](https://flutter.dev/) project template. To the default setup have been added:
 
@@ -213,9 +213,15 @@ Main folders structure
       📂 state
       📂 view
     📂 components
+       📂 animated_text
+            📄 animated_text.dart
        📂 button
+            📄 button_widget.dart
        📂 text
+            📄 custom_text.dart
        📂 textFormField
+            📄 text_form_field_widget.dart
+            📄 validate_operations.dart
     📂 constants
        📂 app
             📄 app_constants.dart
@@ -254,8 +260,10 @@ Main folders structure
         📄 home_view.dart 
    📄 main.dart
    
-📂 test
-
+📂 test 
+      📂 auth
+            📄 auth_service_test.dart 
+      📄 widget_test.dart 
 📄 flutter_launcher_icons.yaml
 
 📄 flutter_native_splash.yaml

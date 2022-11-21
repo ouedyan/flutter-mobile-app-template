@@ -12,6 +12,10 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.5
 
+  #Design
+  google_fonts: ^3.0.1
+  auto_size_text: ^3.0.0
+
   #Responsive
   sizer: ^2.0.15
 

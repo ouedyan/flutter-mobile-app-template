@@ -7,7 +7,6 @@ import 'package:flutter_mobile_template/core/init/routes/routes.dart';
 import 'package:flutter_mobile_template/core/init/theme/colors.dart';
 import 'package:flutter_mobile_template/view/home/home_view.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'core/base/bloc/app_bloc_observer.dart';
 import 'core/dependency_injection.dart';
