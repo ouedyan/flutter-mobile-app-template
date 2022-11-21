@@ -1,4 +1,4 @@
-# Flutter Mobile App Project Template (flutter_bloc, go_router, vexana, json_serializable, easy_localization bot_toast, flutter_secure_storage(and helpers), sizer, google_fonts, flutter_native_splash, flutter_launcher_icons and other generally used features and tools in production.)
+# Flutter Mobile App Project Template (flutter_bloc, go_router, vexana, json_serializable, easy_localization bot_toast, flutter_secure_storage, connectivity_plus, sizer, google_fonts, flutter_native_splash, flutter_launcher_icons and other generally used features and tools in production.)
 
 This is a battery included [Flutter](https://flutter.dev/) project template. To the default setup have been added:
 
@@ -30,6 +30,10 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.5
 
+ #Text
+  google_fonts: ^3.0.1
+  auto_size_text: ^3.0.0
+
   #Responsive
   sizer: ^2.0.15
 
@@ -46,6 +50,8 @@ dependencies:
 
   #Network
   vexana: ^3.0.1
+  url_launcher: ^6.1.6
+  connectivity_plus: ^2.3.5
 
   #Locale Storage
   flutter_secure_storage: ^6.0.0
@@ -68,7 +74,6 @@ dev_dependencies:
 
   # Code generation
   build_runner: ^2.2.0
-  auto_route_generator: ^5.0.3
 
   # Json serialization code generation
   json_serializable: ^6.3.1
@@ -217,6 +222,8 @@ Main folders structure
             📄 animated_text.dart
        📂 button
             📄 button_widget.dart
+       📂 popup
+            📄 main_popup.dart
        📂 text
             📄 custom_text.dart
        📂 textFormField
@@ -227,6 +234,8 @@ Main folders structure
             📄 app_constants.dart
        📂 enums
             📄 api_enums.dart
+            📄 navigation_enums.dart
+            📄 network_results_enums.dart
     📂 extensions
             📄 color_extensions.dart
             📄 context_extensions.dart
@@ -237,14 +246,23 @@ Main folders structure
     📂 init
        📂 language
        📂 local_storage
-            📄 local_storage_manager.dart
+            📄 local_storage_manager.dart,
+       📂 main_build
+            📄 main_build.dart
+       📂 navigation
+            📄 navigation.dart
        📂 network
+            📄 network_change_manager.dart
+            📄 no_network_widget.dart
             📄 vexana_manager.dart
-       📂 routes
-            📄 routes.dart
        📂 theme
-            📄 colors.dart
-    📄 dependency_injection.dart
+            📄 app_theme.dart
+       📂 mixins
+            📄 safe_context_mixin.dart
+            📄 state_mixin.dart
+        📂 utility
+            📄 utility.dart
+    📄 dependency_injector.dart
     📄 locale_keys.g.dart
    📂 view
       📂 auth
@@ -255,10 +273,12 @@ Main folders structure
             📄 {home_state}.dart
         📂 model
         📂 service
-            📄 vexana_manager.dart
+            📄 home_service.dart
         📂 widgets
         📄 home_view.dart 
    📄 main.dart
+   📂 scripts
+            📄 build.sh
    
 📂 test 
       📂 auth

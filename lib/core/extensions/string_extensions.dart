@@ -3,7 +3,7 @@ extension ImagePath on String {
 
   String get toPng => "assets/images/ig_$this.png";
 
-  String get toJpeg => "assets/images/ig_$this.jpg";
+  String get toJpg => "assets/images/ig_$this.jpg";
 
   String get toPngIc => "assets/icons/ic_$this.png";
 
@@ -17,7 +17,7 @@ extension StringValidatorExtension on String? {
 
 extension FormValidate on String {
   String? get emailValidate =>
-      contains("@") ? null : "Uygun bir e-mail adresi giriniz !";
+      contains("@") ? null : "Please enter a valid email.";
 }
 
 extension StringExtensions on String {

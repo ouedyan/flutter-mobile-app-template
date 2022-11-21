@@ -12,12 +12,12 @@ emailValidateOperation(dynamic email) {
       .hasMatch(email);
 
   if (email == null || email.isEmpty || !emailValid) {
-    return "Please enter a valid e-mail address!";
+    return "Please make sure you enter the correct email.";
   }
   return null;
 }
 
-checkUserNameValidation(bool value) {
+checkUserName(bool value) {
   if (!value) {
     return "*This username is already in use";
   }

@@ -9,5 +9,5 @@ class AppConstants {
 
   AppConstants._init();
 
-  static const Color black = Color(0x0fffffff);
+  Color black = const Color(0x0fffffff);
 }

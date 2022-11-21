@@ -8,12 +8,16 @@ class VexanaManager {
     return _instance!;
   }
 
-  static const String baseUrl = "http://localhost:3000/";
+  static const String baseUrl = "http://localhost:3000/api";
 
   VexanaManager._init();
 
   INetworkManager networkManager = NetworkManager(
     isEnableLogger: true,
-    options: BaseOptions(baseUrl: baseUrl),
+    isEnableTest: true,
+    options: BaseOptions(
+      baseUrl: baseUrl,
+      followRedirects: true,
+    ),
   );
 }

@@ -3,19 +3,17 @@ import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter_mobile_template/core/init/routes/routes.dart';
-import 'package:flutter_mobile_template/core/init/theme/colors.dart';
-import 'package:flutter_mobile_template/view/home/home_view.dart';
+import 'package:flutter_mobile_template/core/init/main_build/main_build.dart';
+import 'package:flutter_mobile_template/core/init/navigation/navigation.dart';
+import 'package:flutter_mobile_template/core/init/theme/app_theme.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:sizer/sizer.dart';
 import 'core/base/bloc/app_bloc_observer.dart';
-import 'core/dependency_injection.dart';
+import 'core/dependency_injector.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  initializeDateFormatting('tr');
-  await EasyLocalization.ensureInitialized();
-
+  await _init();
+  Bloc.observer = AppBlocObserver.instance;
   runZoned(
     () => runApp(
       MultiRepositoryProvider(
@@ -27,7 +25,12 @@ void main() async {
       ),
     ),
   );
-  Bloc.observer = AppBlocObserver();
+}
+
+Future<void> _init() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  initializeDateFormatting('tr');
+  await EasyLocalization.ensureInitialized();
 }
 
 class MyApp extends StatelessWidget {
@@ -40,16 +43,14 @@ class MyApp extends StatelessWidget {
       builder: (context, orientation, deviceType) {
         final botToastBuilder = BotToastInit();
         return MaterialApp.router(
-          routerConfig: routes,
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Mobile App Template',
+          routerConfig: Navigation.instance.routes,
           builder: (context, child) => botToastBuilder(
             context,
-            const HomeView(),
+            MainBuild(child: child),
           ),
-          title: 'Flutter Mobile App Template',
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            primarySwatch: primarySwatch,
-          ),
+          theme: AppTheme.instance.appTheme,
         );
       },
     );
