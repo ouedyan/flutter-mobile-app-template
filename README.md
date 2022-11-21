@@ -1,15 +1,15 @@
-# Flutter Mobile App Project Template (flutter_bloc, autoroute, dio, json_serializable, easy_localization bot_toast, flutter_secure_storage(and helpers), flutter_screenutil, flutter_native_splash, flutter_launcher_icons and other generally used features and tools in production.)
+# Flutter Mobile App Project Template (flutter_bloc, go_router, vexana, json_serializable, easy_localization bot_toast, flutter_secure_storage, connectivity_plus, sizer, google_fonts, flutter_native_splash, flutter_launcher_icons and other generally used features and tools in production.)
 
 This is a battery included [Flutter](https://flutter.dev/) project template. To the default setup have been added:
 
 - [flutter_bloc](https://bloclibrary.dev/) - Predictable and Highly testable state management library for Dart.
-- [autoroute](https://pub.dev/packages/autoroute) - Robust and customizable Flutter navigation package.
-- [dio](https://pub.dev/packages/dio) - Popular and powerful Http client for Dart.
+- [go_router](https://pub.dev/packages/go_router) - Robust and customizable Flutter navigation package.
+- [vexana](https://pub.dev/packages/vexana) - Popular and powerful Http client for Dart.
 - [json_serializable](https://pub.dev/packages/json_serializable) - Generates to/from json serialization code for our data models.
 - [easy_localization](https://pub.dev/packages/easy_localization) - Easy and Fast internationalization.
 - [bot_toast](https://pub.dev/packages/bot_toast) - Feature-Rich Toast/alert/notification/popup library for Flutter.
 - [flutter_secure_storage](https://pub.dev/packages/flutter_secure_storage) - A Flutter plugin to store data in secure storage (encrypted, not in plain text like shared_preferences). Eg. for storing user credentials, tokens...
-- [flutter_screenutil](https://pub.dev/packages/flutter_screenutil) - A package for adapting screen and font size.
+- [sizer](https://pub.dev/packages/sizer) - A package for adapting screen and font size.
 - [flutter_svg](https://pub.dev/packages/flutter_svg) - For rendering SVG assets.
 - Some tooling for project initial setup.
     - [flutter_native_splash](https://pub.dev/packages/flutter_native_splash) - Generates iOS, Android, and Web-native code for customizing the native splash screen background color and splash image.
@@ -28,47 +28,59 @@ Initialize the Flutter project, add all the necessary dependencies mentioned abo
 dependencies:
   flutter:
     sdk: flutter
-  # ...
-  # ...
-  # Http client
-  dio: ^4.0.6
-  # I18n
+  cupertino_icons: ^1.0.5
+
+ #Text
+  google_fonts: ^3.0.1
+  auto_size_text: ^3.0.0
+
+  #Responsive
+  sizer: ^2.0.15
+
+  #Image
+  flutter_svg: ^1.1.6
+
+  #State Management
+  provider: ^6.0.4
+  flutter_bloc: ^8.1.1
+
+  #JsonAnnotation
+  json_annotation: ^4.7.0
+  equatable: ^2.0.5
+
+  #Network
+  vexana: ^3.0.1
+  url_launcher: ^6.1.6
+  connectivity_plus: ^2.3.5
+
+  #Locale Storage
+  flutter_secure_storage: ^6.0.0
+
+  #Navigation
+  go_router: ^5.1.1
+
+  #Localization
   intl: ^0.17.0
   easy_localization: ^3.0.1
-  # Secure String key-value storage
-  flutter_secure_storage: ^5.0.2
-  # Dependency Injection
-  provider: ^6.0.3
-  # State management
-  flutter_bloc: ^8.0.1
-  equatable: ^2.0.3
-  bloc: ^8.0.3
-  # Navigation
-  auto_route: ^4.0.1
-  # Global in-app alert/notification/toast/snackBar
-  bot_toast: ^4.0.2
-  # Responsiveness
-  flutter_screenutil: ^5.5.3+2
-  #SVG Support
-  flutter_svg: ^1.1.0
-  # Data Model Json serialization annotations
-  json_annotation: ^4.5.0
-  #Native Splash screen autoconfiguration
-  flutter_native_splash: ^2.2.3+1
+  bot_toast: ^4.0.3
 
+  #Native Splash Screen
+  flutter_native_splash: ^2.2.13
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  # ...
-  # ...
+  flutter_lints: ^2.0.1
+
   # Code generation
-  build_runner: ^2.1.11
-  auto_route_generator: ^4.0.0
+  build_runner: ^2.2.0
+
   # Json serialization code generation
-  json_serializable: ^6.2.0
+  json_serializable: ^6.3.1
+
   # Native Launcher Icons generator
-  flutter_launcher_icons: ^0.9.3
+  flutter_launcher_icons: ^0.10.0
+
   # Change app package name/bundle id and app name
   change_app_package_name: ^1.1.0
   rename: ^2.0.1
@@ -191,37 +203,87 @@ Main folders structure
       ...📄 {locale}.json
       
 📂 lib
-   📂 bloc
-      ...📂 bloc
-            📄 {global_bloc}.dart
-            📄 {global_bloc_event}.dart
-            📄 {global_bloc_state}.dart
-   📂 core
+   📂 core   
+    📂 base
       📂 bloc
+         📂 auth
+            📄 {auth_bloc}.dart
+            📄 {auth_event}.dart
+            📄 {auth_state}.dart
          📄 app_bloc_observer.dart
-      📂 local_storage
-         📄 local_storage_manager.dart
-      📂 network
-         📄 dio_manager.dart
-      📂 theme
-         📄 colors.dart
-      📄 constants.dart
-      📄 dependency_injection.dart
-      📄 navigation.dart
-      📄 utils.dart
-   📂 ui
-      📂 widgets
-         ...📄 {common_widget}.dart
-      📂 screens
-         ...📂 {screen}.dart
-         📂 view_bloc
-            📄 {screen_bloc}.dart
-            📄 {screen_bloc_event}.dart
-            📄 {screen_bloc_state}.dart
+      📂 functions
+         📄 base_functions.dart
+      📂 model
+      📂 service
+      📂 state
+      📂 view
+    📂 components
+       📂 animated_text
+            📄 animated_text.dart
+       📂 button
+            📄 button_widget.dart
+       📂 popup
+            📄 main_popup.dart
+       📂 text
+            📄 custom_text.dart
+       📂 textFormField
+            📄 text_form_field_widget.dart
+            📄 validate_operations.dart
+    📂 constants
+       📂 app
+            📄 app_constants.dart
+       📂 enums
+            📄 api_enums.dart
+            📄 navigation_enums.dart
+            📄 network_results_enums.dart
+    📂 extensions
+            📄 color_extensions.dart
+            📄 context_extensions.dart
+            📄 iterable_extensions.dart
+            📄 network_extensions.dart
+            📄 num_extensions.dart
+            📄 string_extensions.dart
+    📂 init
+       📂 language
+       📂 local_storage
+            📄 local_storage_manager.dart,
+       📂 main_build
+            📄 main_build.dart
+       📂 navigation
+            📄 navigation.dart
+       📂 network
+            📄 network_change_manager.dart
+            📄 no_network_widget.dart
+            📄 vexana_manager.dart
+       📂 theme
+            📄 app_theme.dart
+       📂 mixins
+            📄 safe_context_mixin.dart
+            📄 state_mixin.dart
+        📂 utility
+            📄 utility.dart
+    📄 dependency_injector.dart
+    📄 locale_keys.g.dart
+   📂 view
+      📂 auth
+      📂 home  
+        📂 bloc
+            📄 {home_bloc}.dart
+            📄 {home_event}.dart
+            📄 {home_state}.dart
+        📂 model
+        📂 service
+            📄 home_service.dart
+        📂 widgets
+        📄 home_view.dart 
    📄 main.dart
+   📂 scripts
+            📄 build.sh
    
-📂 test
-
+📂 test 
+      📂 auth
+            📄 auth_service_test.dart 
+      📄 widget_test.dart 
 📄 flutter_launcher_icons.yaml
 
 📄 flutter_native_splash.yaml

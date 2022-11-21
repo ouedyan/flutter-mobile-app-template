@@ -1,0 +1,1 @@
+enum NetworkResultEnums { on, off }
