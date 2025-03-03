@@ -95,7 +95,7 @@ dev_dependencies:
   riverpod_lint: 2.6.5 # Riverpod-specific lints
 
   # Code Generation
-  build_runner: ^2.4.15 # Code generation orchestration
+  build_runner: 2.4.15 # Code generation orchestration
   slang_build_runner: 4.5.0 # i18n code generation
   riverpod_generator: 2.6.5 # Riverpod code generation
   theme_tailor: # Theme code generation
