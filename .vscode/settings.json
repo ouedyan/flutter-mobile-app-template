@@ -1,0 +1,15 @@
+{
+  "explorer.fileNesting.patterns": {
+    "*.dart": "${capture}.g.dart, ${capture}.freezed.dart, ${capture}.tailor.dart, ${capture}.gen.dart"
+  },
+  "i18n-ally.enabledFrameworks": ["custom"],
+  "i18n-ally.annotationDelimiter": ".",
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.localesPaths": "assets/i18n",
+  "i18n-ally.namespace": true,
+  "i18n-ally.sortKeys": true,
+  "dart.lineLength": 120,
+  "[dart]": {
+    "editor.rulers": [120]
+  }
+}

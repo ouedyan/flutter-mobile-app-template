@@ -1,241 +1,270 @@
-# Flutter Mobile App Project Template (flutter_bloc, autoroute, dio, json_serializable, easy_localization bot_toast, flutter_secure_storage(and helpers), flutter_screenutil, flutter_native_splash, flutter_launcher_icons and other generally used features and tools in production.)
+# Flutter Mobile Template
 
-This is a battery included [Flutter](https://flutter.dev/) project template. To the default setup have been added:
+![Flutter Version](https://img.shields.io/badge/Flutter-3.29+-blue.svg)
+![Dart Version](https://img.shields.io/badge/Dart-3.7+-blue.svg)
 
-- [flutter_bloc](https://bloclibrary.dev/) - Predictable and Highly testable state management library for Dart.
-- [autoroute](https://pub.dev/packages/autoroute) - Robust and customizable Flutter navigation package.
-- [dio](https://pub.dev/packages/dio) - Popular and powerful Http client for Dart.
-- [json_serializable](https://pub.dev/packages/json_serializable) - Generates to/from json serialization code for our data models.
-- [easy_localization](https://pub.dev/packages/easy_localization) - Easy and Fast internationalization.
-- [bot_toast](https://pub.dev/packages/bot_toast) - Feature-Rich Toast/alert/notification/popup library for Flutter.
-- [flutter_secure_storage](https://pub.dev/packages/flutter_secure_storage) - A Flutter plugin to store data in secure storage (encrypted, not in plain text like shared_preferences). Eg. for storing user credentials, tokens...
-- [flutter_screenutil](https://pub.dev/packages/flutter_screenutil) - A package for adapting screen and font size.
-- [flutter_svg](https://pub.dev/packages/flutter_svg) - For rendering SVG assets.
-- Some tooling for project initial setup.
-    - [flutter_native_splash](https://pub.dev/packages/flutter_native_splash) - Generates iOS, Android, and Web-native code for customizing the native splash screen background color and splash image.
-    - [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons) - Fully flexible toolset for updating your Flutter app's launcher icons (Android and Ios).
-    - [rename](https://pub.dev/packages/rename) - Change your flutter project's AppName and BundleId (IOS, Android, macOS and Web).
-    - [change_app_package_name](https://pub.dev/packages/change_app_package_name) - Complementary to **rename** package, for changing app package name in Android and renaming correctly directories (which **rename** doesn't do).
+A production-ready Flutter starter template designed for building scalable mobile applications with industry best practices and a comprehensive toolset.
 
-## Project Config roadmap (Just Informative. Don't repeat these steps.)
+## Why This Template?
 
-All the necessary config and dependencies have already been set and ready for use but there is an explanation of each step if you want to know more about the pre-config or customize it.
+- 🚀 **Production-Ready**: Built with scalability and maintainability in mind
+- 📱 **Cross-Platform**: Optimized for both Android and iOS platforms
+- 🔒 **Type-Safe**: Leverages Dart's strong typing with code generation
+- 🔄 **State Management**: Integrated Hooks Riverpod for efficient reactive programming
+- 🌐 **Networking**: Preconfigured Dio API clients with proper error handling
+- 🌍 **Internationalization**: Type-safe i18n solution with Slang
+- 🧪 **Testable**: Structure designed for easy unit and widget testing
+- 🔧 **Developer Experience**: Extensive tooling and utilities included
 
-Initialize the Flutter project, add all the necessary dependencies mentioned above in the **pubspec.yaml** configuration file and run `pub get`.
+## Key Features
 
-**pubspec.yaml**
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  # ...
-  # ...
-  # Http client
-  dio: ^4.0.6
-  # I18n
-  intl: ^0.17.0
-  easy_localization: ^3.0.1
-  # Secure String key-value storage
-  flutter_secure_storage: ^5.0.2
-  # Dependency Injection
-  provider: ^6.0.3
-  # State management
-  flutter_bloc: ^8.0.1
-  equatable: ^2.0.3
-  bloc: ^8.0.3
-  # Navigation
-  auto_route: ^4.0.1
-  # Global in-app alert/notification/toast/snackBar
-  bot_toast: ^4.0.2
-  # Responsiveness
-  flutter_screenutil: ^5.5.3+2
-  #SVG Support
-  flutter_svg: ^1.1.0
-  # Data Model Json serialization annotations
-  json_annotation: ^4.5.0
-  #Native Splash screen autoconfiguration
-  flutter_native_splash: ^2.2.3+1
+### State Management & Dependency Injection
+- **Hooks Riverpod**: Complete integration with code generation support via Riverpod Generator
+- **Flutter Hooks**: For reusable stateful logic
+- **Custom Query System**: React-Query inspired hooks system with useQuery, useInfiniteQuery, useAsyncTask...
+- **Provider Observers**: Built-in debugging tools for state changes
 
+### Routing & Navigation
+- **Go Router**: Type-safe routing with deep linking support
+- **Custom Route Extensions**:
+  - Fixes for common GoRouter issues
+  - Enhanced RoutePage implementation with consistent navigation behavior
+- **Router State Provider**: For reactive routing state access
 
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  # ...
-  # ...
-  # Code generation
-  build_runner: ^2.1.11
-  auto_route_generator: ^4.0.0
-  # Json serialization code generation
-  json_serializable: ^6.2.0
-  # Native Launcher Icons generator
-  flutter_launcher_icons: ^0.9.3
-  # Change app package name/bundle id and app name
-  change_app_package_name: ^1.1.0
-  rename: ^2.0.1
-```
+### API & Networking
+- **Dio**: Configured HTTP client with interceptors
+- **Repository Pattern**: Clean data layer organization
+- **Centralized Error Handling**: Via custom ApiService implementation
+- **Mock API Clients**: Testing-friendly API infrastructure with repository pattern
 
-Change the app name to your own one.
+### Data Persistence
+- **Flutter Secure Storage**: Encrypted storage for sensitive data
+- **Shared Preferences**: Simple key-value storage wrapper
+- **Type-safe Storage Access**: Strongly typed providers for storage values
+
+### UI/UX Components
+- **Advanced Scaffolding System**:
+  - Root scaffold with config provider for separation of concerns
+  - Page scaffold with widget delegation and useful common fixes and features
+- **Responsive Design**: Flutter ScreenUtil integration for adaptive interfaces
+- **Theme System**: Type-safe theme with Theme Tailor
+- **SVG Support**: Flutter SVG for vector graphics rendering
+- **Form Management**: Reactive Forms with validation
+- **Common UI Components**:
+  - Dialog and alert system with standardized API
+  - Snackbar and toast messages with consistent styling
+
+### Internationalization
+- **Slang**: For strongly-typed translations
+- **Locale Management**: Dynamic locale switching with persistence
+
+### Developer Tooling
+- **Custom Lint Rules**: Via Flutter Lints, Custom Lint, and Riverpod Lint
+- **Conventional Commits**: Enforced via Commitlint CLI
+- **Git Hooks**: Pre-commit and pre-push checks via Husky
+- **Flutter Gen**: Asset code generation for type-safe asset access
+
+### App Configuration
+- **Launch Icons**: Flutter Launcher Icons for customizing app icons
+- **Native Splash**: Flutter Native Splash for splash screen configuration
+- **App Metadata**: Package name and app name management via Change App Package Name and Rename
+
+## Getting Started
+
+### Initial Project Configuration
+
+1. Change the app name:
+
 ```bash
 flutter pub run rename --appname "YourAppName"
 ```
 
-Change the package name/bundle id to your own one.
+2. Change the package name/bundle id:
+
 ```bash
-flutter pub run change_app_package_name:main com.company.name &&
-flutter pub run rename --bundleId com.company.name
+flutter pub run change_app_package_name:main com.company.name && flutter pub run rename --bundleId com.company.name
 ```
 
-Add **flutter_native_splash.yaml** config file to the project root directory.
-_(See the concerned for more information)_
+3. Configure splash screen in `flutter_native_splash.yaml`:
+
 ```yaml
 flutter_native_splash:
   # ...
   color: "#ffffff"
   background_image: "assets/background.png"
   image: assets/splash.png
-  # ...
+  # ... other configurations
 ```
 
-Generate the splash screens after you have added your own configuration.
+4. Generate splash screens:
+
 ```bash
-flutter pub run flutter_native_splash:create
+dart run flutter_native_splash:create
 ```
 
-Add **flutter_launchers_icons.yaml** config file to the project root directory.
-_(See the concerned for more information)_
+5. Configure app icons in `flutter_launchers_icons.yaml`:
+
 ```yaml
 flutter_icons:
   android: "launcher_icon"
-  ios: true
   image_path: "assets/icons/launcher_icon.png"
-  # Icons with alpha channel are not allowed in the Apple App Store.
+  min_sdk_android: 21
+  ios: true
   remove_alpha_ios: true
-  # ...
+  # ... other configurations
 ```
 
-Generate the launcher icons after you have added your own configuration.
+6. Generate app icons:
+
 ```bash
-flutter pub run flutter_launcher_icons:main
+dart run flutter_launcher_icons
 ```
 
-
-The android minSdKVersion is set to **Android API level 21** to comply to modern libraries requirements support. Eg. flutter_secure_storage (requires Android API level 18).
-
-**android/app/build.gradle**
-```groovy
-android {
-//...
-  defaultConfig {
-    //...
-    minSdkVersion 21
-    targetSdkVersion flutter.targetSdkVersion
-    versionCode flutterVersionCode.toInteger()
-    versionName flutterVersionName
-  }
-//...
-}
-```
-
-
-
-## Scripts
-
-Change package name/bundle id
-```bash
-flutter pub run change_app_package_name:main com.new.package.name && flutter pub run rename --bundleId com.new.package.name
-```
-
-Change App Name
-```bash
-flutter pub run rename --appname "NewAppName"
-```
-
-Run build_runner to generate/regenerate code from code generating packages (autoroute, easy_localization, json_serializable, etc.)
-```bash
-flutter pub run build_runner build
-```
-Generate while overriding old outputs
-```bash
-flutter packages pub run build_runner build --delete-conflicting-outputs
-```
-Watch and regenerate after each change
-```bash
-flutter pub run build_runner watch
-```
-
-Generate easy_localization translation string keys for usage in code
-```bash
-flutter pub run easy_localization:generate  -O lib/core/ -f keys -o locale_keys.g.dart --source-dir assets/translations
-```
-
-Generate native launcher icons from config.
-```bash
-flutter pub run flutter_launcher_icons:main
-```
-
-Generate native splash screens from config
-```bash
-flutter pub run flutter_native_splash:create
-```
-
-## Project directory structure
-
-Main folders structure
+## Project Structure
 
 ```
 📂 assets
-   📂 icons
-   📂 images
-   📂 translations
-      📄 en.json
-      ...📄 {locale}.json
-      
+   📂 icons                                   # Vector and raster icon assets
+   📂 images                                  # Image assets
+   📂 i18n
+      📂 {locale}                             # Localized resources by language
+         📄 {namespace}.json                  # Translation resources by feature
+
 📂 lib
-   📂 bloc
-      ...📂 bloc
-            📄 {global_bloc}.dart
-            📄 {global_bloc_event}.dart
-            📄 {global_bloc_state}.dart
-   📂 core
-      📂 bloc
-         📄 app_bloc_observer.dart
-      📂 local_storage
-         📄 local_storage_manager.dart
-      📂 network
-         📄 dio_manager.dart
-      📂 theme
-         📄 colors.dart
-      📄 constants.dart
-      📄 dependency_injection.dart
-      📄 navigation.dart
-      📄 utils.dart
-   📂 ui
-      📂 widgets
-         ...📄 {common_widget}.dart
-      📂 screens
-         ...📂 {screen}.dart
-         📂 view_bloc
-            📄 {screen_bloc}.dart
-            📄 {screen_bloc_event}.dart
-            📄 {screen_bloc_state}.dart
-   📄 main.dart
-   
-📂 test
+   📂 constants                               # Application-wide constants
 
-📄 flutter_launcher_icons.yaml
+   📂 features                                # Feature modules
+      📂 {feature}                            # e.g., auth, home, settings
+         📂 data
+            📂 models                         # Feature-specific data models
+            📄 {feature}_api_client.dart      # API endpoints for the feature
+            📄 {entity}_provider.dart         # State providers for the feature
+         📂 screens                           # UI screens within the feature
+            📄 {screen_name}_screen.dart
+         📂 widgets                           # Feature-specific UI components
+            📄 {widget_name}.dart
 
-📄 flutter_native_splash.yaml
+   📂 gen                                     # Generated files (assets, etc.)
 
-📄 pubspec.yaml
+   📂 i18n                                    # Internationalization
+      📄 locale_provider.dart                 # Locale state management
 
+   📂 services                                # Core application services
+      📂 api                                  # API infrastructure
+         📄 api_client.dart                   # Base API client
+         📄 api_service.dart                  # API service with error handling
+         📄 mocked_api_client.dart            # Testing helpers
+      📂 navigation                           # Routing system
+         📄 router.dart                       # Application router configuration
+         📄 route_page.dart                   # Custom route page implementation
+         📄 pop_notifier.dart                 # Navigation state refresh fixes
+      📂 storage                              # Data persistence
+         📄 secure_storage.dart               # Encrypted storage service
+         📄 prefs.dart                        # Key-value storage service
+
+   📂 theme                                   # App theming
+      📄 app_theme.dart                       # Theme definitions
+
+   📂 utils                                   # Utility functions and extensions
+      📂 data
+         📂 hooks                             # Custom hook implementations
+            📄 use_query.dart                 # React-Query inspired data fetching
+            📄 use_async_task.dart            # Async operation management
+      📂 forms                                # Form helpers
+      📂 providers                            # Provider utilities
+         📄 extensions.dart                   # Provider extension methods
+      📂 router                               # Router utilities
+         📄 redirects.dart                    # Navigation guards and redirects
+      📂 strings                              # String manipulation
+
+   📂 widgets                                 # Shared UI components
+      📂 scaffold                             # Advanced scaffolding system
+         📄 root_scaffold.dart                # Base root scaffold
+         📄 page_scaffold.dart                # Smart page scaffold
+         📄 root_scaffold_config.dart         # Configuration system
+      📄 alerts.dart                          # Alert dialog system
+      📄 snackbars.dart                       # Notification system
+      📄 svg.dart                             # SVG rendering utilities
+
+   📄 main.dart                               # Application entry point
 ```
 
-## Project tech stack useful resources
+## Useful Commands
 
-### Flutter
-- [Flutter](https://flutter.dev) - Flutter framework official website.
-- [Flutter Docs](https://docs.flutter.dev) - Flutter official documentation.
+### Code Generation
 
-### Dart
-- [Dart](https://dart.dev) - Dart language official website.
-- [Dart Docs](https://dart.dev/guides) - Dart official documentation.
+Generate code for all code-generating packages:
+
+```bash
+dart run build_runner build
+```
+
+Overwrite conflicting outputs:
+
+```bash
+dart run build_runner build --delete-conflicting-outputs
+```
+
+Watch for changes and regenerate:
+
+```bash
+dart run build_runner watch
+```
+
+### Internationalization
+
+Generate translation files:
+
+```bash
+dart run slang
+```
+
+Analyze translations:
+
+```bash
+dart run slang analyze
+```
+
+### App Configuration
+
+Generate launcher icons:
+
+```bash
+dart run flutter_launcher_icons
+```
+
+Generate splash screens:
+
+```bash
+dart run flutter_native_splash:create
+```
+
+Restore default splash screen:
+
+```bash
+dart run flutter_native_splash:remove
+```
+
+## Main Tech Stack's Useful Resources
+
+### Flutter & Dart
+- [Flutter Documentation](https://docs.flutter.dev) - Official Flutter docs
+- [Dart Documentation](https://dart.dev/guides) - Official Dart guides
+
+### State Management
+- [Riverpod Documentation](https://riverpod.dev) - Official Riverpod docs
+- [Flutter Hooks](https://pub.dev/packages/flutter_hooks) - Reuse stateful logic
+
+### Architecture
+- [GoRouter](https://pub.dev/packages/go_router) - Declarative routing
+- [Dio](https://pub.dev/packages/dio) - HTTP client documentation
+
+### Internationalization
+- [Slang](https://pub.dev/packages/slang) - Type-safe internationalization
+
+### UI/UX
+- [Flutter ScreenUtil](https://pub.dev/packages/flutter_screenutil) - Responsive design
+- [Google Fonts](https://pub.dev/packages/google_fonts) - Typography
+- [Flutter SVG](https://pub.dev/packages/flutter_svg) - SVG rendering
+- [Reactive Forms](https://pub.dev/packages/reactive_forms) - Form management
+- [Flutter Animate](https://pub.dev/packages/flutter_animate) - Animation library

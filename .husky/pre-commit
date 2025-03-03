@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Enforce pubspec exact versioning for dependencies
+git diff --cached --name-only | grep -q 'pubspec.yaml' && dart run tool/validate_pubspec_versions.dart
+
+# Run lint_staged
+dart run lint_staged

@@ -1,0 +1,68 @@
+include: package:commitlint_cli/commitlint.yaml
+
+# Rules are in format:
+# - level: [0 = disabled, 1 = warning, 2 = error]
+# - applicable: [always|never]
+# - value: rule-specific value
+
+# build: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+# chore: Installing new dependencies, or bumping deps
+# ci: Changes to our CI configuration files and scripts (Ex: GitHub workflows, Husky, Travis, Circle)
+# docs: Documentation only changes. Ex: README.md
+# feat: Changes about feature addition or removal. Ex: `feat: add table on landing page`, `feat: remove table from landing page`
+# fix: Bug fix, followed by the bug. Ex: `fix: illustration overflows in mobile view`
+# perf : Code change regarding performance (deriving state, using memo, callback)
+# refactor: A code change that neither fixes a bug nor adds a feature
+# revert : When reverting commits
+# style: Changes that do not affect the meaning of the code (white-space, formatting, missing semicolons, removing comments etc.)
+# test: Adding missing tests or correcting existing tests
+
+rules:
+  # Body rules
+  body-leading-blank:
+    - 0  # Disabled
+    - always
+  body-max-line-length:
+    - 0  # Disabled
+    - always
+    - 100
+
+  # Footer rules
+  footer-leading-blank:
+    - 1  # Warning
+    - always
+  footer-max-line-length:
+    - 0  # Disabled
+    - always
+    - 100
+
+  # Header rules
+  header-max-length:
+    - 0  # Disabled
+    - always
+    - 100
+
+  # Subject rules
+  subject-empty:
+    - 0  # Disabled
+    - never
+  subject-full-stop:
+    - 1  # Warning
+    - never
+    - '.'
+
+  # Type rules
+  type-case:
+    - 2  # Error
+    - always
+    - lower-case
+  type-empty:
+    - 2  # Error
+    - never
+  type-enum:
+    - 2  # Error
+    - always
+    - [build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test]
+
+# Default ignores and other settings
+defaultIgnores: true

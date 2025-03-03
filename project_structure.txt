@@ -1,0 +1,130 @@
+.
+├── README.md
+├── README.prod.md
+├── analysis_options.yaml
+├── assets
+│   ├── i18n
+│   │   ├── en
+│   │   │   ├── api.json
+│   │   │   ├── auth.json
+│   │   │   ├── common.json
+│   │   │   └── demo.json
+│   │   └── fr
+│   │       ├── api.json
+│   │       ├── auth.json
+│   │       ├── common.json
+│   │       └── demo.json
+│   ├── icons
+│   │   └── demo.svg
+│   └── images
+├── build.yaml
+├── commitlint.yaml
+├── devtools_options.yaml
+├── flutter_launcher_icons.yaml
+├── flutter_native_splash.yaml
+├── lib
+│   ├── constants
+│   ├── features
+│   │   ├── auth
+│   │   │   ├── data
+│   │   │   │   ├── auth_api_client.dart
+│   │   │   │   └── models
+│   │   │   ├── screens
+│   │   │   └── widgets
+│   │   ├── demo
+│   │   │   ├── data
+│   │   │   │   ├── demo_api_client.dart
+│   │   │   │   ├── mocked_demo_api_client.dart
+│   │   │   │   ├── mocked_demo_api_client_repository.dart
+│   │   │   │   ├── models
+│   │   │   │   │   ├── product.dto.dart
+│   │   │   │   │   ├── product.dto.freezed.dart
+│   │   │   │   │   └── product.dto.g.dart
+│   │   │   │   ├── products_provider.dart
+│   │   │   │   └── products_provider.g.dart
+│   │   │   ├── screens
+│   │   │   │   ├── demo_components_screen.dart
+│   │   │   │   ├── demo_i18n_screen.dart
+│   │   │   │   ├── demo_infinite_provider_screen.dart
+│   │   │   │   ├── demo_infinite_query_screen.dart
+│   │   │   │   ├── demo_mutations_screen.dart
+│   │   │   │   ├── demo_navigation_screen.dart
+│   │   │   │   └── demo_query_screen.dart
+│   │   │   └── widgets
+│   │   │       ├── add_product_dialog.dart
+│   │   │       └── product_card.dart
+│   │   └── home
+│   │       ├── data
+│   │       │   └── models
+│   │       ├── screens
+│   │       │   └── home_screen.dart
+│   │       └── widgets
+│   ├── gen
+│   │   └── assets.gen.dart
+│   ├── i18n
+│   │   ├── locale_provider.dart
+│   │   ├── locale_provider.g.dart
+│   │   ├── translations.g.dart
+│   │   ├── translations_en.g.dart
+│   │   └── translations_fr.g.dart
+│   ├── main.dart
+│   ├── services
+│   │   ├── api
+│   │   │   ├── api_client.dart
+│   │   │   ├── api_service.dart
+│   │   │   ├── api_service.g.dart
+│   │   │   └── mocked_api_client.dart
+│   │   ├── navigation
+│   │   │   ├── pop_notifier.dart
+│   │   │   ├── pop_notifier.g.dart
+│   │   │   ├── route_page.dart
+│   │   │   ├── router.dart
+│   │   │   ├── router.g.dart
+│   │   │   ├── router_state_provider.dart
+│   │   │   └── router_state_provider.g.dart
+│   │   └── storage
+│   │       ├── prefs.dart
+│   │       ├── prefs.g.dart
+│   │       ├── secure_storage.dart
+│   │       └── secure_storage.g.dart
+│   ├── theme
+│   │   ├── app_theme.dart
+│   │   └── app_theme.tailor.dart
+│   ├── utils
+│   │   ├── data
+│   │   │   └── hooks
+│   │   │       ├── use_async_task.dart
+│   │   │       └── use_query.dart
+│   │   ├── exceptions.dart
+│   │   ├── forms
+│   │   │   └── validation.dart
+│   │   ├── i18n.dart
+│   │   ├── providers
+│   │   │   ├── extensions.dart
+│   │   │   └── provider_observer.dart
+│   │   ├── router
+│   │   │   ├── extensions.dart
+│   │   │   ├── observer.dart
+│   │   │   └── redirects.dart
+│   │   └── strings
+│   │       └── extensions.dart
+│   └── widgets
+│       ├── alerts.dart
+│       ├── dialogs
+│       │   └── utils.dart
+│       ├── lang_selector.dart
+│       ├── scaffold
+│       │   ├── main_bottom_navigation_bar.dart
+│       │   ├── main_root_scaffold.dart
+│       │   ├── page_scaffold.dart
+│       │   ├── root_scaffold.dart
+│       │   ├── root_scaffold_config.dart
+│       │   └── root_scaffold_config_provider.dart
+│       ├── snackbars.dart
+│       └── svg.dart
+├── pubspec.lock
+├── pubspec.yaml
+├── test
+│   └── widget_test.dart
+└── tool
+    └── validate_pubspec_versions.dart

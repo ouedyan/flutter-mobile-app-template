@@ -1,0 +1,39 @@
+{
+  "welcome": "Welcome {{name}}!",
+  "items": {
+    "zero": "No items",
+    "one": "One item",
+    "two": "Two items",
+    "few": "A few items",
+    "many": "Many items",
+    "other": "{{count}} items"
+  },
+  "apples(param=appleCount)": {
+    "zero": "no apples",
+    "one": "one apple",
+    "other": "{{appleCount}} apples"
+  },
+  "bananas(param=bananaCount)": {
+    "zero": "no bananas",
+    "one": "one banana",
+    "other": "{{bananaCount}} bananas"
+  },
+  "fruits": "I have @:demo.apples and @:demo.bananas",
+  "gender(context=Gender)": {
+    "male": "He is {{name}}",
+    "female": "She is {{name}}",
+    "other": "They are {{name}}"
+  },
+  "rich_welcome(rich)": "Welcome back {{name}}!",
+  "last_login": "Last login: {{date: DateFormat.yMd().add_jm()}}",
+  "steps": {
+    "titles": ["Welcome", "Profile", "Preferences", "Done"]
+  },
+  "errors": {
+    "types": {
+      "WARNING": "Warning",
+      "ERROR": "Error",
+      "INFO": "Info"
+    }
+  }
+}

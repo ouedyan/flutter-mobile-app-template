@@ -1,0 +1,26 @@
+# Language Ids that should be scanned for translations
+languageIds:
+  - dart
+  - yaml
+  - json
+
+# RegEx patterns to detect translation key usage
+# The {key} placeholder will be replaced with the proper keypath matching regex
+usageMatchRegex:
+  # Match t.some.path and t['some.path']
+  - "\\bt\\.({key})" # TODO: Does not work, probably because the key is no more a string
+  - "\\bt\\[['\"`]({key})['\"`]"
+  # Match double braces interpolation {{param}}
+  # - "\\{\\{({key})\\}\\}"
+
+# A RegEx to detect scopes from imports and usage
+# This matches the import of the generated translations file
+# scopeRangeRegex: "import.*translations\\.g\\.dart"
+
+# Set to true to only use this custom framework
+monopoly: true
+
+# Templates used when refactoring/inserting new keys
+refactorTemplates:
+  - t.$1
+  - t['$1']

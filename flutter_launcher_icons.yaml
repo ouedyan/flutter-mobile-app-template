@@ -1,11 +1,18 @@
-flutter_icons:
-  android: "launcher_icon"
+# dart run flutter_launcher_icons
+flutter_launcher_icons:
+  image_path: "assets/images/logo.png"
+
+  # Generate a new launcher icon with this name without removing the old default existing icon
+  # Set to true to override instead
+  android: "flutter_launcher_icon"
+  # image_path_android: "assets/icon/icon.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  # adaptive_icon_background: "assets/icon/background.png"
+  # adaptive_icon_foreground: "assets/icon/foreground.png"
+
   ios: true
-  # TODO: Change this to the correct path
-  image_path: "assets/icons/launcher_icon.png"
+  # image_path_ios: "assets/icon/icon.png"
   # Icons with alpha channel are not allowed in the Apple App Store.
   remove_alpha_ios: true
 
 # See https://pub.dev/packages/flutter_launcher_icons#mag-attributes for more information.
-
-
